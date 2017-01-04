@@ -1,35 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+/**
+ * Created by Matvey on 04.01.2017.
+ */
 
-
-
-</head>
-<head>
-    <title>сайт</title>
-</head>
-<script type="text/javascript" src="//pointjs.ru/point.js"></script>
-
-
-
-
-<body>
-<!--<button type="button" onclick="a = 1">play
-</button>-->
-
-
-
-
-
-
-
-<script>
-    a = 0;
     function keyMove(surface, vector1, vector2, key) {
-    if (surface.keyControl.isDown(key))
-        rect.move(v(vector1, vector2));
-}
+        if (surface.keyControl.isDown(key))
+            rect.move(v(vector1, vector2));
+    }
 
 
     var js = new PointJS('2d', 400, 300, {backgroundColor: 'blue'});
@@ -43,7 +19,7 @@
         x: 140,
         y: 100,
         radius: 20,
-        fillColor: 'red'
+        fillColor:'red'
 
     });
     js.game.newLoop("1", function () {
@@ -59,7 +35,3 @@
     });
     game.setLoop("1");
     game.start();
-
-</script>
-</body>
-</html>
