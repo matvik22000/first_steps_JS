@@ -39,11 +39,12 @@
     var key = js.keyControl;
     key.initKeyControl();
 
-    var rect = js.game.newCircleObject({
+    var rect;
+    rect = js.game.newCircleObject({
         x: 140,
         y: 100,
         radius: 20,
-        fillColor: 'red'
+        fillColor: "red"
 
     });
     js.game.newLoop("1", function () {
