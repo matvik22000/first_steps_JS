@@ -17,12 +17,12 @@ var key = js.keyControl;
 var smallmap_size = 100;
 var map_size = 15000;
 key.initKeyControl();
-var map = game.newRectObject({
-    w: 100,
-    h: 100,
-    fillColor: "black",
-    alpha: 0.4
-});
+    var map = game.newRectObject({
+        w: 100,
+        h: 100,
+        fillColor: "black",
+        alpha: 0.4
+    });
 var cell = game.newCircleObject({
    radius:2,
    fillColor: "#FFFFFF"
@@ -113,9 +113,9 @@ js.game.newLoop("1", function () {
     enemy_1.draw();
     if (dr)
         turrel.draw();
-    for (var j123; j123 < ammo.length; j123++) {
-        ammo[j123].drawDynamicBox("red");
-        if (ammo[j123].isStaticIntersect(turrel.getStaticBox()))
+    for (var j; j < ammo.length; j++) {
+        ammo[j].drawStaticBox("green");
+        if (ammo[j].isStaticIntersect(turrel.getStaticBox()))
           dr = false;
     }
         if (js.keyControl.isDown("UP"))
@@ -128,11 +128,10 @@ js.game.newLoop("1", function () {
     if (js.keyControl.isDown("RIGHT"))
         obj.turn(-5);
     if (js.keyControl.isDown("SPACE")) {
-        var circle = game.newRectObject({
+        var circle = game.newCircleObject({
             x: obj.getPositionC().x,
             y: obj.getPositionC().y,
-            w: 60,
-            h:60,
+            radius: 5,
             fillColor: "black"
 
         });
