@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="//pointjs.ru/point.js"></script>
+<script>
+    alert("Внимание, мотялётыч!");
+    function keyMove(vector1, vector2, key) {
+        if (js.keyControl.isDown(key))
+            rect.move(v(vector1, vector2));
+    }
+    var js = new PointJS('2d', 400, 300, {backgroundColor: 'blue'});
+    var game = js.game;
+    var v = js.vector.v2d;
+    var key = js.keyControl;
+    key.initKeyControl();
+
+    var rect = js.game.newCircleObject({
+        x: 140,
+        y: 100,
+        radius: 20,
+        fillColor:'red'
+
+    });
+    js.game.newLoop("1", function () {
+
+        js.game.clear();
+        keyMove(1, 0, "RIGHT");
+        keyMove(-1, 0, "LEFT");
+        keyMove(0, 1, "DOWN");
+        keyMove(0, -1, "UP");
+
+        rect.draw()
+
+    });
+    game.setLoop("1");
+    game.start();
+
+
+
+</script>
+</body>
+</html>
